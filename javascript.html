@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTonw09OF9AujK_HxmwaBH6YeFq0dpfgdGkg&s">
+</head>
+<body>
+    <div class="navbar">
+        <div class="dropdown">
+            <button class="dropbtn">Home <br><p>Javascript</p>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="mongodb.html">Mongo DB</a>
+                <a href="react.html">React.js</a>
+                <a href="index.html">Express.js</a>
+            </div>
+        </div>
+        <a href="gq.html">General Questions</a>
+    </div>
+    <div>
+    <h1>JavaScript</h1>
+    <h4> 1What is the difference between `var`, `let`, and `const`?
+        - Understand the scope, hoisting, and mutability differences between these declarations</h4>
+        
+    <h5>var </h5>
+        <li>Scope: var variables are function-scoped or globally scoped. They are visible throughout the function in which they are declared, even if declared inside a block.</li>
+        <li>Hoisting: var declarations are hoisted to the top of their function or global scope. However, their initialization remains where it is.</li>
+        <li>Mutability: var variables can be re-assigned and updated.
+         </li>
+    
+     
+     <h5>let </h5>
+        <li>Scope: let variables are block-scoped (inside any curly braces {}). They are only accessible within the block in which they are defined.</li>
+        <li>Hoisting: let declarations are hoisted to the top of their block, but like var, they are not initialized. Accessing a let variable before its declaration results in a ReferenceError.</li>
+        <li>Mutability: let variables can be reassigned but not re-declared within the same scope.</li>
+    
+     <h5>const </h5>
+        <li>Scope: const variables are block-scoped like let.</li>
+        <li>Hoisting: const declarations are also hoisted to the top of their block, but like let, they are not initialized.</li>
+        <li>Mutability: const variables must be initialized with a value at the time of declaration and cannot be reassigned. However, they are not immutable; the properties of objects and arrays declared with const can still be modified.</li>
+  
+     <h5>Summory of Difference</h5>
+        <li>var is function-scoped, hoisted, and can be reassigned.</li>
+        <li>let is block-scoped, hoisted, cannot be accessed before initialization (temporal dead zone), and can be reassigned.</li>
+        <li>const is block-scoped, hoisted, cannot be accessed before initialization (temporal dead zone), and cannot be reassigned (though its properties can be mutated for objects and arrays).</li>
+     <hr>
+</div>
+<div>
+    <h4>2. **What are the differences between `==` and `===` in JavaScript?**
+        - Evaluate the knowledge of type coercion and strict equality
+    short node for interview</h4>
+     <h5>== (Abstract Equality Comparison):</h5>
+     <li>Performs type coercion before comparing two values.</li>
+     <li>Converts the operands to the same type before making the comparison</li>
+     <h4>examples</h4>
+     <li>1 == '1' evaluates to true because '1' is converted to the number 1 before comparison.</li>
+     <li>null == undefined evaluates to true</li>
+     <li>0 == false evaluates to true.</li>
+     <li>Can lead to unexpected results due to implicit type conversions.</li>
+    
+     <h5> to implicit type conversions.
+        === (Strict Equality Comparison):</h5>
+        <li>Does not perform type coercion.</li>
+        <li>Checks for equality of both value and type.</li>
+      <h5>Examples:</h5>
+      <li>1 === '1' evaluates to false because they are of different types (number and string).</li>
+      <li>null === undefined evaluates to false.</li>
+      <li>0 === false evaluates to false because they are of different types.</li>
+      <li>Preferred for comparisons where type and value both need to be identical.</li>
+</div>
+<div>
+    <h4>Summary:</h4>
+     <li>Use === (strict equality) to avoid unintended type coercion and ensure both value and type match.
+    </li>
+     <li>Use == (abstract equality) cautiously, as it may lead to unexpected results due to automatic type conversions.</li>
+</div>
+<hr>
+<div>
+    <h4>3. What are arrow functions, and how do they differ from traditional function expressions?**
+        - Discuss the differences in syntax, `this` binding, and use cases.</h4>
+     <h5>Arrow Functions</h5>
+     <li>Syntax: Arrow functions are defined using a shorter syntax () => {}. They lack the function keyword and curly braces for single expressions if not required.</li>
+     <li>this Binding: Arrow functions do not have their own this context; they inherit this from the enclosing lexical context (often the parent scope).</li>
+     <li>Use Cases: Preferred for non-method functions, such as callbacks or standalone functions, where this should lexically resolve.</li>
+
+     <h5>Traditional Function Expressions:</h5>
+     <li>Syntax: Defined using the function keyword, optionally with a name (function name() {}).</li>
+     <li>this Binding: Has its own this context, which is determined by how the function is called.</li>
+     <li>Use Cases: Often used for object methods or when this needs to be dynamically bound based on the caller.</li>
+
+     <h5>summary:</h5>
+     <li>Arrow functions provide a concise syntax and lexically scoped this, making them suitable for callbacks and non-method functions.</li>
+     <li>Traditional function expressions offer more flexibility with this binding and are commonly used for object methods and in scenarios where this needs dynamic binding.</li>
+</div>
+ <hr>
+ <div>
+    <h4>3. **What are arrow functions, and how do they differ from traditional function expressions?**
+        - Discuss the differences in syntax, `this` binding, and use cases.
+    short paragraph for interview</h4>
+     <p>
+        Arrow functions in JavaScript are a concise way to write functions using a streamlined syntax () => {}. Unlike traditional function expressions defined with the function keyword, arrow functions do not have their own this context but instead inherit this from their lexical enclosing scope. This lexical this behavior simplifies handling of this in callbacks and non-method functions, where traditional functions might require workarounds like .bind() or capturing this in closures. Arrow functions are particularly useful for writing compact, understandable code in scenarios like array methods, event handlers, and functional programming constructs. Understanding these differences helps developers choose the appropriate function syntax based on clarity, this binding requirements, and code style preferences.</p>
+</div>
+<hr>
+<div>
+    <h4>5. **How does the `async`/`await` syntax work in JavaScript?**
+        - Evaluate the ability to write cleaner asynchronous code using modern syntax.
+    short note for interviews</h4>
+     <h5>Async/Await Syntax:</h5>
+     <li>Purpose: async functions allow writing asynchronous code in a synchronous-looking manner, enhancing readability and maintainability.</li>
+     <li>Usage: Functions marked with async return Promises implicitly and can use the await keyword to pause execution until asynchronous operations complete.</li>
+     <li>Benefits: Simplifies error handling with try-catch blocks, avoids callback nesting (callback hell), and enhances code readability by resembling synchronous code structure.</li>
+</div>
+<hr>
+<div>
+    <h4>6. **Can you explain what JavaScript modules are and how they are used?**
+        - Discuss the concepts of ES6 modules, `import` and `export`, and the benefits of modularity.
+    short note for interviews</h4>
+     <h5>JavaScript Modules:</h5>
+     <li>Concept: ES6 modules provide a way to structure JavaScript code into reusable components with clear boundaries and dependencies.</li>
+     <li>import and export: Modules use export to expose variables, functions, or classes from a file, and import to bring those exposed entities into another file.</li>
+     <li>Benefits: Promotes code organization, encapsulation, and reusability by allowing developers to split code into smaller files/modules. It helps manage dependencies more effectively and avoids global namespace pollution.</li>
+     <li>Using JavaScript modules enhances code maintainability, encourages separation of concerns, and facilitates collaboration among developers by clearly defining dependencies and exports.</li>
+</div>
+<hr><hr><hr><hr>
+
+</body>
+</html>
+<div>
+    <h4></h4>
+     <p></p>
+</div>
